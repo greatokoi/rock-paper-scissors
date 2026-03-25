@@ -46,6 +46,7 @@ def compare(u_guess,c_guess,u_score,c_score):
         c_score += 1
     else:
         print("Invalid input")
+    return u_score, c_score
 
 
 continue_playing = True
@@ -61,7 +62,7 @@ while continue_playing:
     c_guess = random.randint(0,2)
     print(f"Computer guessed:\n{items[c_guess]}")
 
-    compare(u_guess,c_guess, u_score, c_score)
+    u_score, c_score = compare(u_guess,c_guess, u_score, c_score)
 
     should_continue = input("Do you want to keep Playing 'y' or 'n': ").lower()
     if should_continue == "y":

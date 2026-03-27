@@ -18,7 +18,7 @@ paper = '''
 ---.__________)
 '''
 
-scissors = '''
+scissor = '''
     _______
 ---'   ____)____
           ______)
@@ -27,7 +27,7 @@ scissors = '''
 ---.__(___)
 '''
 
-items = [rock, paper, scissors]
+items = [rock, paper, scissor]
 
 def compare(u_guess,c_guess,u_score,c_score):
     if u_guess == c_guess:
@@ -48,10 +48,12 @@ def compare(u_guess,c_guess,u_score,c_score):
         print("Invalid input")
     return u_score, c_score
 
+    return u_score, c_score
+
 
 continue_playing = True
-u_score = 0
-c_score = 0
+u_point = 0
+c_point = 0
 while continue_playing:
     u_guess = int(input("Enter your choice\nType 0 for rock\n1 for paper\n2 for scissors: "))
 
@@ -62,14 +64,14 @@ while continue_playing:
     c_guess = random.randint(0,2)
     print(f"Computer guessed:\n{items[c_guess]}")
 
-    u_score, c_score = compare(u_guess,c_guess, u_score, c_score)
+    u_point, c_point = compare(u_guess,c_guess, u_point, c_point)
 
     should_continue = input("Do you want to keep Playing 'y' or 'n': ").lower()
     if should_continue == "y":
-        compare(u_guess,c_guess, u_score, c_score)
+        compare(u_guess,c_guess, u_point, c_point)
     elif should_continue == "n":
         continue_playing = False
-        print(f"Your score is {u_score}, the computer's score is {c_score}")
+        print(f"Your score is {u_point}, the computer's score is {c_point}")
 
     else:
         print("Invalid Input")

@@ -46,6 +46,7 @@ def compare(u_guess,c_guess,u_score,c_score):
         c_score += 1
     else:
         print("Invalid input")
+    return u_score, c_score
 
     return u_score, c_score
 
